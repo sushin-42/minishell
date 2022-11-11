@@ -15,9 +15,9 @@
 static void		print_history(char **backup, char *past)
 {
 	static char	*tmp;
-	int			i;
+	
 
-	i = 0;
+	
 	if (tmp == NULL && past == NULL)
 		return ;
 	erase_all(*backup);

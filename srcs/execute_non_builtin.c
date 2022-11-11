@@ -27,7 +27,7 @@ static void	free_envp_in_err(char **envp)
 
 void		exe_non_builtin(char **argv, t_list *env)
 {
-	int		err;
+	
 	char	*path_cmd;
 	char	**envp;
 
@@ -35,13 +35,13 @@ void		exe_non_builtin(char **argv, t_list *env)
 	if (argv[0][0] != '.' && argv[0][0] != '/')
 	{
 		path_cmd = search_path(argv, envp);
-		err = execve(path_cmd, argv, envp);
+		execve(path_cmd, argv, envp);
 		print_err_msg(argv[0], NULL);
 		ft_putstr_fd("command not found\n", 2);
 	}
 	else
 	{
-		err = execve(argv[0], argv, envp);
+		execve(argv[0], argv, envp);
 		print_err_msg(argv[0], NULL);
 		print_errno();
 	}

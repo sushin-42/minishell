@@ -12,11 +12,11 @@
 
 #include "mini.h"
 
-static void			handle_int(int sign)
+static void			handle_int()
 {
 	struct termios	diff;
 
-	sign = 0;
+	
 	tcgetattr(0, &diff);
 	if ((diff.c_lflag & ICANON) == ICANON)
 		write(1, "\n", 1);
